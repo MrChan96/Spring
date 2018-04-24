@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<!-- 使用bean标签 -->
+	<bean id="bicycle" class="com.km.demo1.Bicycle">
+		<constructor-arg index="0" value="捷安特" />
+	</bean>
+
+
+	<!-- 使用bean标签 -->
+	<bean id="student" class="com.km.demo1.Student">
+		<constructor-arg name="name" value="科贸学子" />
+		<constructor-arg name="bicycle" ref="bicycle" />
+		<property name="subject">
+			<list>
+				<value>C++</value>
+				<value>Java</value>
+				<value>PHP</value>
+			</list>
+
+		</property>
+		<property name="score">
+			<map>
+				<entry key="Chinese" value="90"></entry>
+				<entry key="Math" value="88"></entry>
+				<entry key="English" value="87"></entry>
+			</map>
+		</property>
+		<property name="interest">
+			<set>
+				<value>睡觉</value>
+				<value>吃饭</value>
+				<value>打蚊子</value>
+			</set>
+		</property>
+		<property name="arrs">
+			<list>
+				<value>哈哈哈</value>
+				<value>呵呵呵</value>
+			</list>
+		</property>
+		<property name="pro">
+			<props>
+				<prop key="uname">root</prop>
+				<prop key="pass">123456</prop>
+			</props>
+		</property>
+	</bean>
+
+
+</beans>
